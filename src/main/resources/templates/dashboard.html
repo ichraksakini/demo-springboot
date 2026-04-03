@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Dashboard</title>
 </head>
 <body>
 
 <h1>Bienvenue 🔥</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Valeur</th>
+        <th>Date</th>
+    </tr>
+
+    <tr th:each="d : ${data}">
+        <td th:text="${d.id}"></td>
+        <td th:text="${d.nom}"></td>
+        <td th:text="${d.valeur}"></td>
+        <td th:text="${d.date}"></td>
+    </tr>
+
+</table>
 
 </body>
 </html>
