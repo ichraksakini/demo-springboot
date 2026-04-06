@@ -1,21 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard Energie</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
 <h1>Bienvenue 🔥</h1>
 
 <table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Date</th>
-        <th>Heure</th>
-        <th>Technicien</th>
-        <th>Gasoil 1</th>
-        <th>Gasoil 2</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Heure</th>
+            <th>Technicien</th>
+            <th>Gasoil 1</th>
+            <th>Gasoil 2</th>
+        </tr>
+    </thead>
 
-    <tr th:each="d : ${data}">
-        <td th:text="${d.id}"></td>
-        <td th:text="${d.date}"></td>
-        <td th:text="${d.heureDebut}"></td>
-        <td th:text="${d.technicien}"></td>
-        <td th:text="${d.gasoilCiterne1}"></td>
-        <td th:text="${d.gasoilCiterne2}"></td>
-    </tr>
+    <tbody>
+        <tr th:each="e : ${energies}">
+            <td th:text="${e.id}"></td>
+            <td th:text="${e.date}"></td>
+            <td th:text="${e.heure_debut}"></td>
+            <td th:text="${e.technicien}"></td>
+            <td th:text="${e.gasoil1}"></td>
+            <td th:text="${e.gasoil2}"></td>
+        </tr>
+    </tbody>
 </table>
+
+</body>
+</html>
