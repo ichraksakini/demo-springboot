@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @Autowired
-    private EnergieRepository repo;
+    private final EnergieRepository energieRepository;
+
+    public HomeController(EnergieRepository energieRepository) {
+        this.energieRepository = energieRepository;
+    }
 
     @GetMapping("/")
     public String home(Model model) {
-
-        model.addAttribute("data", repo.findAll());
-
+        model.addAttribute("energies", energieRepository.findAll());
         return "dashboard";
     }
 }
