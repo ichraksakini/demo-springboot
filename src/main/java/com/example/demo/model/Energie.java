@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.model;
 
 import jakarta.persistence.*;
 
@@ -7,16 +7,16 @@ import jakarta.persistence.*;
 public class Energie {
 
     @Id
+    @Column(name = "id")
     private String id;
 
-    @Column(name = "date")
-    private String date;
-
-    @Column(name = "heure_debut")
-    private String heure_debut;
-
-    @Column(name = "technicien")
-    private String technicien;
-
     public Energie() {}
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
