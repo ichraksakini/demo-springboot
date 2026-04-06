@@ -17,4 +17,6 @@ public class Energie {
 
     @Column(name = "technicien")
     private String technicien;
+
+    public Energie() {}
 }
