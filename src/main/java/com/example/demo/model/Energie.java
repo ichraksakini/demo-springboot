@@ -1,17 +1,20 @@
 package com.example.demo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "energie")
 public class Energie {
 
     @Id
-    private String id;   // 🔥 IMPORTANT : String (pas Long)
+    private String id;
 
+    @Column(name = "date")
     private String date;
-    private String heure_debut;
-    private String technicien;
 
-    // getters & setters
+    @Column(name = "heure_debut")
+    private String heure_debut;
+
+    @Column(name = "technicien")
+    private String technicien;
 }
