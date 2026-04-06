@@ -1,25 +1,17 @@
-package com.example.demo.model;
+package com.example.demo;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Energie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;   // 🔥 IMPORTANT : String (pas Long)
 
-    private String nom;
-    private Double valeur;
     private String date;
+    private String heure_debut;
+    private String technicien;
 
-    public Long getId() { return id; }
-    public String getNom() { return nom; }
-    public Double getValeur() { return valeur; }
-    public String getDate() { return date; }
-
-    public void setId(Long id) { this.id = id; }
-    public void setNom(String nom) { this.nom = nom; }
-    public void setValeur(Double valeur) { this.valeur = valeur; }
-    public void setDate(String date) { this.date = date; }
+    // getters & setters
 }
