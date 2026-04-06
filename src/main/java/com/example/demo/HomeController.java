@@ -16,9 +16,13 @@ public class HomeController {
         this.energieRepository = energieRepository;
     }
 
-    @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("energies", energieRepository.findAll());
-        return "dashboard";
+   @GetMapping("/")
+public String home(Model model) {
+    var list = energieRepository.findAll();
+
+    System.out.println("SIZE = " + list.size()); // 🔥 IMPORTANT
+
+    model.addAttribute("energies", list);
+    return "dashboard";
     }
 }
