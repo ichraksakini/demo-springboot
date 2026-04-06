@@ -20,7 +20,7 @@ public class HomeController {
 public String home(Model model) {
     var list = energieRepository.findAll();
 
-    System.out.println("SIZE = " + list.size()); // 🔥 IMPORTANT
+   System.err.println("🔥 DATA SIZE = " + list.size());
 
     model.addAttribute("energies", list);
     return "dashboard";
